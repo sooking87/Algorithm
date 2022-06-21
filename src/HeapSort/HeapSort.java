@@ -29,10 +29,12 @@ public class HeapSort {
 
     // 힙 정렬
     static void heapSort(int[] a, int n) {
+        // 처음 Max 힙 만드는 과정
         for (int i = (n - 1) / 2; i >= 0; i--) {
             downHeap(a, i, n - 1);
         }
 
+        // 제일 마지막 노드와 첫 노드를 바꾸어준 후, 루트노드부터 힙을 만드는 반복문
         for (int i = n - 1; i > 0; i--) {
             swap(a, 0, i); // 가장 큰 요소와 아직 정렬되지 않은 부분의 마지막 요소를 교환
             downHeap(a, 0, i - 1); // a[0] ~ a[i-1]을 힙으로 만들어줌.
